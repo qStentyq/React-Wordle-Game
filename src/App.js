@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Wordle from './components/Wordle'
+import Wordle from './components/Wordle/Wordle'
 
 function App() {
   const [solution, setSolution] = useState(null)

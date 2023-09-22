@@ -4,9 +4,10 @@ const useWorld = (solution) =>
 {
     const [turn, setTurn] = useState(0)
     const [currentGuess, setCurrentGuess] = useState('')
-    const [guesses, setGuesses] = useState([])
+    const [guesses, setGuesses] = useState([...Array(6)])
     const [history, setHistory] = useState([])
     const [isCorrect, setIsCorrect] = useState(false)
+    const [usedKeys, setUsedKeys] = useState({})
 
 
     const formatGuess = () =>
@@ -36,9 +37,45 @@ const useWorld = (solution) =>
         return formatedGuess
     }
 
-    const addNewGuess = (newGuess) => {
-        setHistory(history => [...history, newGuess])
+    const addNewGuess = (formated) => {
+        
+        
+
+        if(currentGuess === solution) {
+            setIsCorrect(true)
+        }
+        setGuesses((prev) => {
+            let newGuesses = [...prev]
+            newGuesses[turn] = formated
+            return newGuesses
+        })
+        setHistory(history => [...history, currentGuess])
         console.log(history)
+        setTurn(turn => turn + 1)
+        setUsedKeys((prevUsedKeys) => {
+            let newKeys = {...prevUsedKeys}
+
+            formated.forEach((l) => {
+                const currentColor = newKeys[l.key]
+                // if(currentColor){
+                    if(l.color === 'green'){
+                        newKeys[l.key] = 'green'
+                        return 
+                    }
+                    if(l.color === 'yellow' && currentColor !== 'green') {
+                        newKeys[l.key] = 'yellow'
+                        return
+                    }
+                    if(l.color === 'grey' && currentColor !== 'green' && currentColor !== 'yellow') {
+                        newKeys[l.key] = 'grey'
+                        return
+                    }
+                // }
+            })
+            return newKeys
+        })
+        setCurrentGuess('')
+
     }
 
     const handleKeyup = ({ key }) =>
@@ -64,10 +101,7 @@ const useWorld = (solution) =>
                 return
             }
             const formatted = formatGuess()
-            console.log(formatted)
-            addNewGuess(currentGuess)
-            setCurrentGuess('')
-            setTurn(turn => turn + 1)
+            addNewGuess(formatted)
             return
         }
         if(/^[A-Za-z]$/.test(key)) {
@@ -78,7 +112,7 @@ const useWorld = (solution) =>
     }
 
 
-    return {turn, currentGuess, guesses, isCorrect, handleKeyup}
+    return {turn, currentGuess, guesses, isCorrect, handleKeyup, usedKeys}
 
 }
 
