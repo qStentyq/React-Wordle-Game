@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Wordle from './components/Wordle/Wordle'
 
-function App() {
+function App({ dificulty = 7}) {
   const [solution, setSolution] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:3001/solutions')
+    fetch(`http://localhost:3001/solutions${dificulty}`)
     .then(res => res.json())
     .then(json => {
       const randomSolution = json[Math.floor(Math.random()*json.length)]
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <h1>Wordle (Lingo)</h1>
-      {solution && <div> <Wordle solution = {solution} /></div>}
+      {solution && <div> <Wordle solution = {solution} dificulty = {dificulty}/></div>}
     </div>
   );
 }

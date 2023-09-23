@@ -1,5 +1,5 @@
 {
-  "solutions": [
+  "solutions5": [
     {"id": 1, "word": "ninja"},
     {"id": 2, "word": "spade"},
     {"id": 3, "word": "pools"},
@@ -15,6 +15,40 @@
     {"id": 13, "word": "bling"},
     {"id": 14, "word": "coins"},
     {"id": 15, "word": "hello"}
+  ],
+  "solutions7": [
+    {"id": 1, "word": "ninjaaa"},
+    {"id": 2, "word": "spadeaa"},
+    {"id": 3, "word": "poolsaa"},
+    {"id": 4, "word": "driveaa"},
+    {"id": 5, "word": "relaxaa"},
+    {"id": 6, "word": "timesaa"},
+    {"id": 7, "word": "trainaa"},
+    {"id": 8, "word": "coresaa"},
+    {"id": 9, "word": "poursaa"},
+    {"id": 10, "word": "blameaa"},
+    {"id": 11, "word": "banksaa"},
+    {"id": 12, "word": "phoneaa"},
+    {"id": 13, "word": "blingaa"},
+    {"id": 14, "word": "coinsaa"},
+    {"id": 15, "word": "helloaa"}
+  ],
+  "solutions10": [
+    {"id": 1, "word": "ninjaaaaaa"},
+    {"id": 2, "word": "spadeaaaaa"},
+    {"id": 3, "word": "poolsaaaaa"},
+    {"id": 4, "word": "driveaaaaa"},
+    {"id": 5, "word": "relaxaaaaa"},
+    {"id": 6, "word": "timesaaaaa"},
+    {"id": 7, "word": "trainaaaaa"},
+    {"id": 8, "word": "coresaaaaa"},
+    {"id": 9, "word": "poursaaaaa"},
+    {"id": 10, "word": "blameaaaaa"},
+    {"id": 11, "word": "banksaaaaa"},
+    {"id": 12, "word": "phoneaaaaa"},
+    {"id": 13, "word": "blingaaaaa"},
+    {"id": 14, "word": "coinsaaaaa"},
+    {"id": 15, "word": "helloaaaaa"}
   ],
   "lettersEN": [
     {"key": "a"},

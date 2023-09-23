@@ -1,10 +1,11 @@
 import { useState } from "react"
 
-const useWorld = (solution) =>
+const useWorld = (solution, dificulty) =>
 {
+    // const [newDificulty, setDificulty] = dificulty
     const [turn, setTurn] = useState(0)
     const [currentGuess, setCurrentGuess] = useState('')
-    const [guesses, setGuesses] = useState([...Array(6)])
+    const [guesses, setGuesses] = useState([...Array(dificulty + 1)])
     const [history, setHistory] = useState([])
     const [isCorrect, setIsCorrect] = useState(false)
     const [usedKeys, setUsedKeys] = useState({})
@@ -45,6 +46,7 @@ const useWorld = (solution) =>
             setIsCorrect(true)
         }
         setGuesses((prev) => {
+            console.log(guesses, guesses.length)
             let newGuesses = [...prev]
             newGuesses[turn] = formated
             return newGuesses
@@ -57,7 +59,6 @@ const useWorld = (solution) =>
 
             formated.forEach((l) => {
                 const currentColor = newKeys[l.key]
-                // if(currentColor){
                     if(l.color === 'green'){
                         newKeys[l.key] = 'green'
                         return 
@@ -70,7 +71,7 @@ const useWorld = (solution) =>
                         newKeys[l.key] = 'grey'
                         return
                     }
-                // }
+
             })
             return newKeys
         })
@@ -88,11 +89,11 @@ const useWorld = (solution) =>
         {
             const compareCurrentGuess = history.filter(item => item === currentGuess)
             
-            if(currentGuess.length < 5 ) {
-                alert('Слово должно состоять из 5 букв');
+            if(currentGuess.length < dificulty ) {
+                alert(`Слово должно состоять из ${dificulty} букв`);
                 return
             }
-            if(turn > 5) {
+            if(turn > dificulty) {
                 alert('Вы уже использовали все свои попытки')
                 return
             }
@@ -105,7 +106,8 @@ const useWorld = (solution) =>
             return
         }
         if(/^[A-Za-z]$/.test(key)) {
-            if(currentGuess.length < 5){
+            console.log(currentGuess, guesses)
+            if(currentGuess.length < dificulty){
                 setCurrentGuess(current => current + key)
             }
         }

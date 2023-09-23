@@ -1,7 +1,7 @@
 import React from 'react'
 import './row.css'
 
-export default function Raw({ guess, currentGuess }) {
+export default function Row({ guess, currentGuess, dificulty }) {
 
   if(guess){
     return (
@@ -12,15 +12,25 @@ export default function Raw({ guess, currentGuess }) {
       </div>
     )
   }
+  let dif7 = '',
+      dif10 = ''
+  if(dificulty === 7) { dif7 = `<div></div>
+  <div></div>`}
+  if(dificulty === 10) {dif10 = `<div></div>
+  <div></div><div></div>`}
+
 
   if(currentGuess) {
     let letters = currentGuess.split('')
+    console.log(letters)
     return (
+      
         <div className='row current'>
           {letters.map((letter, i) => (
+              console.log(dificulty),
               <div key = {i} className='filled'>{letter}</div>
           ))}
-          {[...Array(5 - letters.length)].map((_, i) => (
+          {[...Array(dificulty - letters.length)].map((_, i) => (
             <div key = {i}></div>
           ))}
         </div>
@@ -34,6 +44,8 @@ export default function Raw({ guess, currentGuess }) {
       <div></div>
       <div></div>
       <div></div>
+      {/* dangerouslySetInnerHTML={{ __html: dif7 }}
+      dangerouslySetInnerHTML={{ __html: dif10 }} */}
     </div>  
   )
 }
