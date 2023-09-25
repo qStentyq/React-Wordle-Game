@@ -52,7 +52,6 @@ const useWorld = (solution, dificulty) =>
             return newGuesses
         })
         setHistory(history => [...history, currentGuess])
-        console.log(history)
         setTurn(turn => turn + 1)
         setUsedKeys((prevUsedKeys) => {
             let newKeys = {...prevUsedKeys}
@@ -105,8 +104,7 @@ const useWorld = (solution, dificulty) =>
             addNewGuess(formatted)
             return
         }
-        if(/^[A-Za-z]$/.test(key)) {
-            console.log(currentGuess, guesses)
+        if(/^[A-Za-zа-яА-Я]$/.test(key)) {
             if(currentGuess.length < dificulty){
                 setCurrentGuess(current => current + key)
             }

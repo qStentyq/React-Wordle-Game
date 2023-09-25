@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import ModalStart from './components/ModalStart/ModalStart';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <ModalStart/>
   </React.StrictMode>,
   document.getElementById('root')
 )

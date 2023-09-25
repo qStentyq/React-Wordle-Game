@@ -14,20 +14,19 @@ export default function Row({ guess, currentGuess, dificulty }) {
   }
   let dif7 = '',
       dif10 = ''
-  if(dificulty === 7) { dif7 = `<div></div>
-  <div></div>`}
-  if(dificulty === 10) {dif10 = `<div></div>
-  <div></div><div></div>`}
+  if(dificulty === 7) { dif7 = <><div></div>
+  <div></div></>}
+  if(dificulty === 10) {dif10 = <><div></div>
+  <div></div><div></div><div></div>
+  <div></div></>}
 
 
   if(currentGuess) {
     let letters = currentGuess.split('')
-    console.log(letters)
     return (
       
         <div className='row current'>
           {letters.map((letter, i) => (
-              console.log(dificulty),
               <div key = {i} className='filled'>{letter}</div>
           ))}
           {[...Array(dificulty - letters.length)].map((_, i) => (
@@ -44,6 +43,8 @@ export default function Row({ guess, currentGuess, dificulty }) {
       <div></div>
       <div></div>
       <div></div>
+      {dif7}
+      {dif10}
       {/* dangerouslySetInnerHTML={{ __html: dif7 }}
       dangerouslySetInnerHTML={{ __html: dif10 }} */}
     </div>  

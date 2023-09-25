@@ -1,22 +1,22 @@
 {
-  "solutions5": [
-    {"id": 1, "word": "ninja"},
-    {"id": 2, "word": "spade"},
-    {"id": 3, "word": "pools"},
-    {"id": 4, "word": "drive"},
-    {"id": 5, "word": "relax"},
-    {"id": 6, "word": "times"},
-    {"id": 7, "word": "train"},
-    {"id": 8, "word": "cores"},
-    {"id": 9, "word": "pours"},
-    {"id": 10, "word": "blame"},
-    {"id": 11, "word": "banks"},
-    {"id": 12, "word": "phone"},
-    {"id": 13, "word": "bling"},
-    {"id": 14, "word": "coins"},
-    {"id": 15, "word": "hello"}
+  "solutions5RU": [
+    {"id": 1, "word": "нинзя"},
+    {"id": 2, "word": "слово"},
+    {"id": 3, "word": "катер"},
+    {"id": 4, "word": "речка"},
+    {"id": 5, "word": "физик"},
+    {"id": 6, "word": "чашка"},
+    {"id": 7, "word": "пешка"},
+    {"id": 8, "word": "булка"},
+    {"id": 9, "word": "ручка"},
+    {"id": 10, "word": "крыша"},
+    {"id": 11, "word": "листы"},
+    {"id": 12, "word": "аграф"},
+    {"id": 13, "word": "совок"},
+    {"id": 14, "word": "солнце"},
+    {"id": 15, "word": "чирок"}
   ],
-  "solutions7": [
+  "solutions7EN": [
     {"id": 1, "word": "ninjaaa"},
     {"id": 2, "word": "spadeaa"},
     {"id": 3, "word": "poolsaa"},
@@ -33,7 +33,7 @@
     {"id": 14, "word": "coinsaa"},
     {"id": 15, "word": "helloaa"}
   ],
-  "solutions10": [
+  "solutions10EN": [
     {"id": 1, "word": "ninjaaaaaa"},
     {"id": 2, "word": "spadeaaaaa"},
     {"id": 3, "word": "poolsaaaaa"},
@@ -49,6 +49,57 @@
     {"id": 13, "word": "blingaaaaa"},
     {"id": 14, "word": "coinsaaaaa"},
     {"id": 15, "word": "helloaaaaa"}
+  ],
+  "solutions5EN": [
+    {"id": 1, "word": "ninja"},
+    {"id": 2, "word": "spade"},
+    {"id": 3, "word": "pools"},
+    {"id": 4, "word": "drive"},
+    {"id": 5, "word": "relax"},
+    {"id": 6, "word": "times"},
+    {"id": 7, "word": "train"},
+    {"id": 8, "word": "cores"},
+    {"id": 9, "word": "pours"},
+    {"id": 10, "word": "blame"},
+    {"id": 11, "word": "banks"},
+    {"id": 12, "word": "phone"},
+    {"id": 13, "word": "bling"},
+    {"id": 14, "word": "coins"},
+    {"id": 15, "word": "hello"}
+  ],
+  "solutions7RU": [
+    {"id": 1, "word": "чувства"},
+    {"id": 2, "word": "чувства"},
+    {"id": 3, "word": "чувства"},
+    {"id": 4, "word": "чувства"},
+    {"id": 5, "word": "чувства"},
+    {"id": 6, "word": "чувства"},
+    {"id": 7, "word": "чувства"},
+    {"id": 8, "word": "чувства"},
+    {"id": 9, "word": "чувства"},
+    {"id": 10, "word": "чувства"},
+    {"id": 11, "word": "чувства"},
+    {"id": 12, "word": "чувства"},
+    {"id": 13, "word": "чувства"},
+    {"id": 14, "word": "чувства"},
+    {"id": 15, "word": "чувства"}
+  ],
+  "solutions10RU": [
+    {"id": 1, "word": "чувстваааа"},
+    {"id": 2, "word": "чувстваааа"},
+    {"id": 3, "word": "чувстваааа"},
+    {"id": 4, "word": "чувстваааа"},
+    {"id": 5, "word": "чувстваааа"},
+    {"id": 6, "word": "чувстваааа"},
+    {"id": 7, "word": "чувстваааа"},
+    {"id": 8, "word": "чувстваааа"},
+    {"id": 9, "word": "чувстваааа"},
+    {"id": 10, "word": "чувстваааа"},
+    {"id": 11, "word": "чувстваааа"},
+    {"id": 12, "word": "чувстваааа"},
+    {"id": 13, "word": "чувстваааа"},
+    {"id": 14, "word": "чувстваааа"},
+    {"id": 15, "word": "чувстваааа"}
   ],
   "lettersEN": [
     {"key": "a"},
