@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const useWorld = (solution, dificulty) =>
+const useWorld = (solution, dificulty, language) =>
 {
     // const [newDificulty, setDificulty] = dificulty
     const [turn, setTurn] = useState(0)
@@ -26,6 +26,7 @@ const useWorld = (solution, dificulty) =>
                 solutionArray[i] = null
             }
         })
+    
 
         //Zheltie
         formatedGuess.forEach((l,i) => {
@@ -104,10 +105,20 @@ const useWorld = (solution, dificulty) =>
             addNewGuess(formatted)
             return
         }
-        if(/^[A-Za-zа-яА-Я]$/.test(key)) {
-            if(currentGuess.length < dificulty){
-                setCurrentGuess(current => current + key)
+        if(language === 'RU') {
+            if(/^[а-яА-Я]$/.test(key)) {
+                curGuessUpdate(key)
             }
+        }
+        if(language === 'EN') {
+            if(/^[A-Za-z]$/.test(key)) {
+                curGuessUpdate(key)
+            }
+        }
+    }
+    const curGuessUpdate = (key) => {
+        if(currentGuess.length < dificulty){
+            setCurrentGuess(current => current + key)
         }
     }
 
