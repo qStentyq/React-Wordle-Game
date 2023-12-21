@@ -52,7 +52,7 @@ const useWorld = (solution, dificulty, language) =>
             newGuesses[turn] = formated
             return newGuesses
         })
-        setHistory(history => [...history, currentGuess])
+        setHistory(history => [...history, currentGuess.toLowerCase()])
         setTurn(turn => turn + 1)
         setUsedKeys((prevUsedKeys) => {
             let newKeys = {...prevUsedKeys}

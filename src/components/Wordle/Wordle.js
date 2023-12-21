@@ -27,7 +27,7 @@ useEffect(() => {
 
   return (
     <>
-        {/* <div>solution - {solution} </div> */}
+        {<div>solution - {solution} </div>}
         {/* <div>current guess - {currentGuess}</div> */}
         <Grid currentGuess = {currentGuess} guesses={guesses} turn = {turn} dificulty={dificulty}/>
         <Keypad usedKeys = {usedKeys} language={language}/>
