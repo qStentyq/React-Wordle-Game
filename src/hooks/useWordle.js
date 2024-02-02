@@ -1,10 +1,11 @@
 import { useState } from "react"
 
-const useWorld = (solution) =>
+const useWorld = (solution, dificulty, language) =>
 {
+    // const [newDificulty, setDificulty] = dificulty
     const [turn, setTurn] = useState(0)
     const [currentGuess, setCurrentGuess] = useState('')
-    const [guesses, setGuesses] = useState([...Array(6)])
+    const [guesses, setGuesses] = useState([...Array(dificulty + 1)])
     const [history, setHistory] = useState([])
     const [isCorrect, setIsCorrect] = useState(false)
     const [usedKeys, setUsedKeys] = useState({})
@@ -25,6 +26,7 @@ const useWorld = (solution) =>
                 solutionArray[i] = null
             }
         })
+    
 
         //Zheltie
         formatedGuess.forEach((l,i) => {
@@ -45,19 +47,18 @@ const useWorld = (solution) =>
             setIsCorrect(true)
         }
         setGuesses((prev) => {
+            console.log(guesses, guesses.length)
             let newGuesses = [...prev]
             newGuesses[turn] = formated
             return newGuesses
         })
-        setHistory(history => [...history, currentGuess])
-        console.log(history)
+        setHistory(history => [...history, currentGuess.toLowerCase()])
         setTurn(turn => turn + 1)
         setUsedKeys((prevUsedKeys) => {
             let newKeys = {...prevUsedKeys}
 
             formated.forEach((l) => {
                 const currentColor = newKeys[l.key]
-                // if(currentColor){
                     if(l.color === 'green'){
                         newKeys[l.key] = 'green'
                         return 
@@ -70,7 +71,7 @@ const useWorld = (solution) =>
                         newKeys[l.key] = 'grey'
                         return
                     }
-                // }
+
             })
             return newKeys
         })
@@ -88,11 +89,11 @@ const useWorld = (solution) =>
         {
             const compareCurrentGuess = history.filter(item => item === currentGuess)
             
-            if(currentGuess.length < 5 ) {
-                alert('Слово должно состоять из 5 букв');
+            if(currentGuess.length < dificulty ) {
+                alert(`Слово должно состоять из ${dificulty} букв`);
                 return
             }
-            if(turn > 5) {
+            if(turn > dificulty) {
                 alert('Вы уже использовали все свои попытки')
                 return
             }
@@ -104,10 +105,20 @@ const useWorld = (solution) =>
             addNewGuess(formatted)
             return
         }
-        if(/^[A-Za-z]$/.test(key)) {
-            if(currentGuess.length < 5){
-                setCurrentGuess(current => current + key)
+        if(language === 'RU') {
+            if(/^[а-яА-Я]$/.test(key)) {
+                curGuessUpdate(key)
             }
+        }
+        if(language === 'EN') {
+            if(/^[A-Za-z]$/.test(key)) {
+                curGuessUpdate(key)
+            }
+        }
+    }
+    const curGuessUpdate = (key) => {
+        if(currentGuess.length < dificulty){
+            setCurrentGuess(current => current + key)
         }
     }
 
